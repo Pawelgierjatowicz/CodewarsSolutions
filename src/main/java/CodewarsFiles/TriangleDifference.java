@@ -8,8 +8,8 @@ import static java.awt.geom.Point2D.distance;
 
 public class TriangleDifference extends JPanel{
     static int move = 100;
-    static int [] x = {50+move,50+move, move};
-    static int [] y = {move,100+move,100+move};
+    static int [] x = {100+move,200+move, move};
+    static int [] y = {move,80+move,100+move};
     static int[] x1 ={30+move,20+move,200+move};
     static int[] y1 ={20+move,50+move,10+move};
     public void paintComponent(Graphics g) {
@@ -42,12 +42,12 @@ public class TriangleDifference extends JPanel{
                 float p2 = (d2-b2)/(a2-c2);
                 float g2 = ((a2*d2)-b2*c2) /(a2-c2);
                 if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                    p2 = x[0];
+                    g2 = (c2*p2)+d2;
                 }
-                else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                else if(x1[1]-x1[2]==0){
+                    p2 = x1[1];
+                    g2 = (a2*p2)+b2;
                 }
                 float a3=(float)(y[0]-y[1])/(x[0]-x[1]);
                 float b3=(float)((x[0]*y[1])-(x[1]*y[0]))/(x[0]-x[1]);
@@ -56,12 +56,12 @@ public class TriangleDifference extends JPanel{
                 float p3 = (d3-b3)/(a3-c3);
                 float g3 = ((a3*d3)-(b3*c3)) /(a3-c3);
                 if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                    p3 = x[0];
+                    g3 = (c3*p3)+d3;
                 }
-                else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                else if(x1[2]-x1[0]==0){
+                    p3 = x1[0];
+                    g3 = (a3*p3)+b3;
                 }
                 float a4=(float)(y[1]-y[2])/(x[1]-x[2]);
                 float b4=(float)((x[1]*y[2])-(x[2]*y[1]))/(x[1]-x[2]);
@@ -69,13 +69,13 @@ public class TriangleDifference extends JPanel{
                 float d4=(float)((x1[1]*y1[2])-(x1[2]*y1[1]))/(x1[1]-x1[2]);
                 float p4 = (d4-b4)/(a4-c4);
                 float g4 = ((a4*d4)-(b4*c4)) /(a4-c4);
-                if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                if(x[1]-x[2]==0) {
+                    p4 = x[1];
+                    g4 = (c4*p4)+d4;
                 }
-                else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                else if(x1[1]-x1[2]==0){
+                    p4 = x1[1];
+                    g4 = (a4*p4)+b4;
                 }
                 float a5=(float)(y[1]-y[2])/(x[1]-x[2]);
                 float b5=(float)((x[1]*y[2])-(x[2]*y[1]))/(x[1]-x[2]);
@@ -83,13 +83,13 @@ public class TriangleDifference extends JPanel{
                 float d5=(float)((x1[2]*y1[0])-(x1[0]*y1[2]))/(x1[2]-x1[0]);
                 float p5 = (d5-b5)/(a5-c5);
                 float g5 = ((a5*d5)-(b5*c5)) /(a5-c5);
-                if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                if(x[1]-x[2]==0) {
+                    p5 = x[1];
+                    g5 = (c5*p5)+d5;
                 }
-                else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                else if(x1[2]-x1[0]==0){
+                    p5 = x1[0];
+                    g5 = (a5*p5)+b5;
                 }
                 float a6=(float)(y[1]-y[2])/(x[1]-x[2]);
                 float b6=(float)((x[1]*y[2])-(x[2]*y[1]))/(x[1]-x[2]);
@@ -97,13 +97,13 @@ public class TriangleDifference extends JPanel{
                 float d6=(float)((x1[0]*y1[1])-(x1[1]*y1[0]))/(x1[0]-x1[1]);
                 float p6 = (d6-b6)/(a6-c6);
                 float g6 = ((a6*d6)-b6*c6) /(a6-c6);
-                if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                if(x[1]-x[2]==0) {
+                    p6 = x[1];
+                    g6 = (c6*p6)+d6;
                 }
                 else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                    p6 = x1[0];
+                    g6 = (a6*p6)+b6;
                 }
                 float a7=(float)(y[2]-y[0])/(x[2]-x[0]);
                 float b7=(float)((x[2]*y[0])-(x[0]*y[2]))/(x[2]-x[0]);
@@ -111,13 +111,13 @@ public class TriangleDifference extends JPanel{
                 float d7=(float)((x1[0]*y1[1])-(x1[1]*y1[0]))/(x1[0]-x1[1]);
                 float p7 = (d7-b7)/(a7-c7);
                 float g7 = ((a7*d7)-b7*c7) /(a7-c7);
-                if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                if(x[2]-x[0]==0) {
+                    p7 = x[0];
+                    g7 = (c7*p7)+d7;
                 }
                 else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                    p7 = x1[0];
+                    g7 = (a7*p7)+b7;
                 }
                 float a8=(float)(y[2]-y[0])/(x[2]-x[0]);
                 float b8=(float)((x[2]*y[0])-(x[0]*y[2]))/(x[2]-x[0]);
@@ -125,13 +125,13 @@ public class TriangleDifference extends JPanel{
                 float d8=(float)((x1[1]*y1[2])-(x1[2]*y1[1]))/(x1[1]-x1[2]);
                 float p8 = (d8-b8)/(a8-c8);
                 float g8 = ((a8*d8)-b8*c8) /(a8-c8);
-                if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                if(x[2]-x[0]==0) {
+                    p8 = x[0];
+                    g8 = (c8*p8)+d8;
                 }
-                else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                else if(x1[1]-x1[2]==0){
+                    p8 = x1[1];
+                    g8 = (a8*p8)+b8;
                 }
                 float a9=(float)(y[2]-y[0])/(x[2]-x[0]);
                 float b9=(float)((x[2]*y[0])-(x[0]*y[2]))/(x[2]-x[0]);
@@ -139,13 +139,13 @@ public class TriangleDifference extends JPanel{
                 float d9=(float)((x1[2]*y1[0])-(x1[0]*y1[2]))/(x1[2]-x1[0]);
                 float p9 = (d9-b9)/(a9-c9);
                 float g9 = ((a9*d9)-b9*c9) /(a9-c9);
-                if(x[0]-x[1]==0) {
-                    p1 = x[0];
-                    g1 = (c1*p1)+d1;
+                if(x[2]-x[0]==0) {
+                    p9 = x[0];
+                    g9 = (c9*p9)+d9;
                 }
-                else if(x1[0]-x1[1]==0){
-                    p1 = x1[0];
-                    g1 = (a1*p1)+b1;
+                else if(x1[2]-x1[0]==0){
+                    p9 = x1[0];
+                    g9 = (a9*p9)+b9;
                 }
                 double check1 = distance(x[0],y[0],p1,g1);
                 double check2 = distance(x[1],y[1],p1,g1);
